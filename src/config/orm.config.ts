@@ -9,8 +9,11 @@ const options: TypeOrmModuleOptions = {
   password: 'root',
   database: 'product_catalog_dev',
   logging: true,
-  entities: [path.resolve(__dirname, '..', 'domain', 'model', '*')],
-  migrations: [path.resolve(__dirname, '..', 'db', 'migration', '*')],
+  entities: [path.resolve(__dirname, '..', 'domain', 'models', '*')],
+  migrations: [path.resolve(__dirname, '..', 'db', 'migrations', '*')],
+  cli: {
+    migrationsDir: path.resolve(__dirname, '..', 'db', 'migrations', '*'),
+  },
 };
 
 module.exports = options;
