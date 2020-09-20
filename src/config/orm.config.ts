@@ -12,6 +12,7 @@ const options: TypeOrmModuleOptions = {
   entities: [path.resolve(__dirname, '..', 'domain', 'models', '*')],
   migrations: [path.resolve(__dirname, '..', 'db', 'migrations', '*')],
   cli: {
+    entitiesDir: path.resolve(__dirname, '..', 'domain', 'models', '*'),
     migrationsDir: path.resolve(__dirname, '..', 'db', 'migrations', '*'),
   },
 };
