@@ -2,22 +2,26 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  OneToMany,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Product } from './product.entity';
+import { User } from './user.entity';
 
 @Entity()
-export class User {
+export class Product {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ nullable: false, unique: true })
-  email: string;
+  name: string;
 
-  @Column({ nullable: false })
-  password: string;
+  @Column()
+  description: string;
+
+  @Column()
+  price: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
@@ -25,9 +29,11 @@ export class User {
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
-  @OneToMany(
-    () => Product,
-    product => product.userConnection,
+  @ManyToOne(
+    () => User,
+    user => user.productConnection,
+    { primary: true },
   )
-  productConnection: Promise<Product[]>;
+  @JoinColumn({ name: 'user_id' })
+  userConnection: Promise<User>;
 }
