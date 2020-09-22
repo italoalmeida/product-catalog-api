@@ -10,7 +10,7 @@ class SaveProductService {
     private readonly productRepository: Repository<Product>,
   ) {}
 
-  saveProduct(product: Product): Promise<Product> {
+  execute(product: Product): Promise<Product> {
     return this.productRepository.save(product);
   }
 }

@@ -17,6 +17,6 @@ export class SaveProductResolver {
     product.price = productInput.price;
     product.userId = productInput.userId;
 
-    return await this.saveProductService.saveProduct(product);
+    return await this.saveProductService.execute(product);
   }
 }

@@ -5,7 +5,6 @@
 type User {
   id: Int!
   email: String!
-  password: String!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -27,6 +26,7 @@ type Product {
 }
 
 type Query {
+  listProduct: [Product!]!
   signIn(password: String!, email: String!): User!
 }
 
