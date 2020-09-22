@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import * as ormconfig from './config/orm.config';
-import CreateProductModule from './domain/features/create-product/create-product.module';
+import SaveProductModule from './domain/features/save-product/save-product.module';
 import SignInUserModule from './domain/features/sign-in-user/sign-in-user.module';
 
 @Module({
@@ -16,7 +16,7 @@ import SignInUserModule from './domain/features/sign-in-user/sign-in-user.module
       playground: true,
     }),
     SignInUserModule,
-    CreateProductModule,
+    SaveProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
