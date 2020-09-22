@@ -4,10 +4,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import * as ormconfig from './config/orm.config';
-import { ListProductModule } from './domain/features/list-product/list-product.module';
-import { RemoveProductModule } from './domain/features/remove-product/remove-product.module';
-import { SaveProductModule } from './domain/features/save-product/save-product.module';
 import { SignInUserModule } from './domain/features/sign-in-user/sign-in-user.module';
+import { CreateProductModule } from './domain/features/create-product/create-product.module';
+import { UpdateProductModule } from './domain/features/update-product/update-product.module';
+import { ListProductModule } from './domain/features/list-product/list-product.module';
+import { DeleteProductModule } from './domain/features/delete-product/delete-product.module';
 
 @Module({
   imports: [
@@ -18,9 +19,10 @@ import { SignInUserModule } from './domain/features/sign-in-user/sign-in-user.mo
       playground: true,
     }),
     SignInUserModule,
-    SaveProductModule,
+    CreateProductModule,
+    UpdateProductModule,
     ListProductModule,
-    RemoveProductModule,
+    DeleteProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],

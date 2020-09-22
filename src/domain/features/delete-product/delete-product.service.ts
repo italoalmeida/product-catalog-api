@@ -4,7 +4,7 @@ import { Product } from 'src/domain/models/product.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class RemoveProductService {
+export class DeleteProductService {
   constructor(
     @InjectRepository(Product)
     private readonly productRepository: Repository<Product>,
