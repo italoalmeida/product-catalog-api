@@ -5,7 +5,7 @@ import { User } from 'src/domain/models/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-class ListProductService {
+export class ListProductService {
   constructor(
     @InjectRepository(Product)
     private readonly productRepository: Repository<Product>,
@@ -25,5 +25,3 @@ class ListProductService {
     });
   }
 }
-
-export default ListProductService;

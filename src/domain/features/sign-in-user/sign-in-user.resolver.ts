@@ -1,6 +1,6 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { User } from 'src/domain/models/user.entity';
-import SignInUserService from './sign-in-user.service';
+import { SignInUserService } from './sign-in-user.service';
 
 @Resolver(() => User)
 export class SignInUserResolver {

@@ -4,7 +4,7 @@ import { User } from 'src/domain/models/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-class SignInUserService {
+export class SignInUserService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
@@ -16,5 +16,3 @@ class SignInUserService {
     });
   }
 }
-
-export default SignInUserService;

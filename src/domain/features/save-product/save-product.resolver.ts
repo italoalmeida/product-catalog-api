@@ -1,6 +1,6 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { Product } from 'src/domain/models/product.entity';
-import SaveProductService from './save-product.service';
+import { SaveProductService } from './save-product.service';
 import { ProductInput } from './product.input';
 
 @Resolver(() => Product)
