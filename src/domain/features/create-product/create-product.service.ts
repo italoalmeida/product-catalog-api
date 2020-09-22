@@ -7,11 +7,13 @@ import { Repository } from 'typeorm';
 @Injectable()
 class CreateProductService {
   constructor(
-    @InjectRepository(User)
-    private readonly userRepository: Repository<User>,
     @InjectRepository(Product)
     private readonly productRepository: Repository<Product>,
   ) {}
+
+  createProduct(product: Product): Promise<Product> {
+    return this.productRepository.save(product);
+  }
 }
 
 export default CreateProductService;

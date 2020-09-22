@@ -15,6 +15,28 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type Product {
+  id: Int!
+  name: String!
+  description: String!
+  price: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User!
+  userId: Float!
+}
+
 type Query {
   signIn(password: String!, email: String!): User!
+}
+
+type Mutation {
+  createProduct(data: ProductInput!): Product!
+}
+
+input ProductInput {
+  name: String!
+  description: String!
+  price: Float!
+  userId: Int!
 }

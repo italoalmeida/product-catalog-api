@@ -40,6 +40,10 @@ export class Product {
   @Field(() => User)
   user: User;
 
+  @Field()
+  @Column({ name: 'user_id' })
+  userId: number;
+
   @ManyToOne(
     () => User,
     user => user.productConnection,
