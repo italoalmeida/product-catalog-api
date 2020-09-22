@@ -1,6 +1,5 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { Product } from 'src/domain/models/product.entity';
-import { User } from 'src/domain/models/user.entity';
 import CreateProductService from './create-product.service';
 import { ProductInput } from './product.input';
 
