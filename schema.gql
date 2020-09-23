@@ -26,8 +26,13 @@ type User {
 }
 
 type Query {
-  signIn(password: String!, email: String!): User!
+  signIn(data: SignInInput!): String!
   listProduct: [Product!]!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
 }
 
 type Mutation {
