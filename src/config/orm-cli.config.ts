@@ -1,4 +1,3 @@
-import * as path from 'path';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 const options: TypeOrmModuleOptions = {
@@ -10,11 +9,11 @@ const options: TypeOrmModuleOptions = {
   database: process.env.TYPEORM_DATABASE,
   logging: Boolean(process.env.TYPEORM_LOGGING),
   synchronize: Boolean(process.env.TYPEORM_SYNCHRONIZE),
-  entities: [path.resolve(__dirname, '../domain/models/*')],
-  migrations: [path.resolve(__dirname, '../db/migrations/*')],
+  entities: ['src/domain/models/*'],
+  migrations: ['src/db/migrations/*'],
   cli: {
-    entitiesDir: path.resolve(__dirname, '../domain/models/*'),
-    migrationsDir: path.resolve(__dirname, '../db/migrations/*'),
+    entitiesDir: 'src/domain/models/',
+    migrationsDir: 'src/db/migrations/',
   },
 };
 

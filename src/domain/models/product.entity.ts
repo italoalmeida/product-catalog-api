@@ -22,7 +22,7 @@ export class Product {
   name: string;
 
   @Field()
-  @Column()
+  @Column({ length: 5000 })
   description: string;
 
   @Field(() => Float)
